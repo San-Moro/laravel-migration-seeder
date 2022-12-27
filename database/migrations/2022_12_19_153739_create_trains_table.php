@@ -21,9 +21,9 @@ return new class extends Migration
             $table->dateTime('orario_di_partenza');
             $table->dateTime('orario_di_arrivo');
             $table->string('codice_treno', 10);
-            $table->string('numero_carrozze', 10);
-            $table->tinyInteger('in_orario')->unsigned()->default(1);;
-            $table->tinyInteger('cancellato')->unsigned()->default(1);;
+            $table->string('numero_carrozze', 10)->unsigned();
+            $table->tinyInteger('in_orario')->default(1);
+            $table->tinyInteger('cancellato')->default(1);
             $table->timestamps();
         });
     }

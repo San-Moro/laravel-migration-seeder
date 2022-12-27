@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use App\Models\train;
+use App\Models\Train;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index() {
-        $trains = train::all();
+        $trains = Train::where('orario_di_partenza', '>=', now())->get();
         return view('trains.index', compact('trains'));
     }
 }
